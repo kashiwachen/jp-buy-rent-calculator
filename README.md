@@ -3,43 +3,49 @@
 A minimalist static website to help you decide whether to rent or buy a house in Japan.
 
 ## Tech Stack
-- **Backend:** Deno (Oak framework)
 - **Frontend:** React + TypeScript (Vite)
 
 ## Project Structure
 ```
-/backend   # Deno Oak backend (serves static files, optional API)
 /frontend  # React app (Vite)
+/scripts   # Utility scripts (e.g., Excel extraction)
 ```
 
 ## Setup
 
-### 1. Frontend (React)
+### 1. Install dependencies
 ```
 cd frontend
 npm install
-npm run dev
 ```
 
-### 2. Backend (Deno)
+### 2. Launch the website (from project root)
+
+You can run the following command from the project root to start the frontend dev server:
+
 ```
-cd backend
-deno run --allow-net --allow-read server.ts
+npm run start-frontend
+```
+
+Or, from the frontend directory:
+```
+cd frontend
+npm run dev
 ```
 
 ### 3. Build for Production
 ```
 cd frontend
 npm run build
-# Serve with backend
-cd ../backend
-deno run --allow-net --allow-read server.ts
+# Deploy the contents of frontend/dist to your static host (Netlify, Vercel, GitHub Pages, etc.)
 ```
 
 ---
 
+## Utility Scripts
+- See `/scripts/extract_excel_rows.py` for Excel field extraction (requires Python and openpyxl).
+
 ## TODO
-- [ ] Implement rent vs buy calculator UI
-- [ ] Add calculation logic
-- [ ] Connect backend (if needed)
-- [ ] Polish UI/UX 
+- [ ] Implement rent vs buy calculator logic
+- [ ] Add calculation breakdown and results
+- [ ] Polish UI/UX and deploy as static site 
