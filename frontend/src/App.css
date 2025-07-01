@@ -296,49 +296,49 @@ h1 {
 }
 
 .theme-dark body, .theme-dark {
-  background: #181c20 !important;
-  color: #e6e6e6 !important;
+  background: #1a1b26 !important;
+  color: #c0caf5 !important;
 }
 .theme-dark .container {
-  background: #23272e !important;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.25) !important;
+  background: #24283b !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.32) !important;
 }
 .theme-dark .section {
-  background: #23272e !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18) !important;
+  background: #24283b !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.22) !important;
 }
 .theme-dark .section h2 {
-  color: #b6d4ff !important;
-  text-shadow: 0 1px 2px #111a !important;
+  color: #7aa2f7 !important;
+  text-shadow: 0 1px 2px #000a;
 }
 .theme-dark .section-content h3 {
-  color: #7bb0ff !important;
+  color: #bb9af7 !important;
 }
 .theme-dark .input-row, .theme-dark .readonly-field {
   background: none !important;
 }
 .theme-dark .input-row:hover, .theme-dark .input-row:focus-within {
-  background: #232f3e !important;
+  background: #292e42 !important;
 }
 .theme-dark .input-label {
-  color: #e6e6e6 !important;
+  color: #c0caf5 !important;
 }
 .theme-dark .input-unit {
-  color: #b0b8c1 !important;
+  color: #7dcfff !important;
 }
 .theme-dark .input-row input,
 .theme-dark .input-row select {
-  background: #23272e !important;
-  color: #e6e6e6 !important;
-  border: 1px solid #3a4250 !important;
+  background: #1a1b26 !important;
+  color: #c0caf5 !important;
+  border: 1px solid #394b70 !important;
 }
 .theme-dark .input-row input:focus,
 .theme-dark .input-row select:focus {
-  border: 1.5px solid #7bb0ff !important;
+  border: 1.5px solid #7aa2f7 !important;
 }
 .theme-dark .readonly-field {
-  background: #232f3e !important;
-  color: #b0b8c1 !important;
+  background: #292e42 !important;
+  color: #a9b1d6 !important;
 }
 
 .theme-tokyo-night body, .theme-tokyo-night {
