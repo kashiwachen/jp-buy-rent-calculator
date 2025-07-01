@@ -1,0 +1,7 @@
+{
+  "name": "jp-rent-buy-calculator-root",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev"
+  }
+} 
