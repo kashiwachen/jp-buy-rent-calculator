@@ -101,7 +101,7 @@ h1 {
 
 .input-row {
   display: grid;
-  grid-template-columns: 1fr 160px 40px;
+  grid-template-columns: 200px 1fr 44px;
   align-items: center;
   gap: 12px;
   padding: 8px 0;
@@ -112,20 +112,21 @@ h1 {
   background: #eaf2fb;
 }
 
-.input-label {
+.input-row .input-label, .readonly-field .input-label {
+  width: 200px;
   text-align: left;
   font-size: 1rem;
   font-weight: 500;
   color: #223;
+  white-space: pre-line;
 }
-.input-value {
-  text-align: right;
-}
-.input-unit {
+.input-row .input-unit, .readonly-field .input-unit {
+  width: 44px;
+  text-align: left;
   color: #888;
   font-size: 0.98em;
-  text-align: left;
 }
+
 .input-row input,
 .input-row select {
   width: 100%;
@@ -158,7 +159,7 @@ h1 {
 
 .readonly-field {
   display: grid;
-  grid-template-columns: 1fr 160px 40px;
+  grid-template-columns: 200px 1fr 44px;
   align-items: center;
   gap: 12px;
   margin-bottom: 0.2em;
@@ -193,8 +194,11 @@ h1 {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  .input-unit {
-    display: none;
+  .input-row .input-label, .readonly-field .input-label,
+  .input-row .input-unit, .readonly-field .input-unit {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
   .section-content h3 {
     margin-top: 1.2em;
@@ -227,10 +231,10 @@ h1 {
   .input-row:hover, .input-row:focus-within {
     background: #232f3e;
   }
-  .input-label {
+  .input-row .input-label, .readonly-field .input-label {
     color: #e6e6e6;
   }
-  .input-unit {
+  .input-row .input-unit, .readonly-field .input-unit {
     color: #b0b8c1;
   }
   .input-row input,
@@ -274,10 +278,10 @@ h1 {
 .theme-light .input-row:hover, .theme-light .input-row:focus-within {
   background: #eaf2fb !important;
 }
-.theme-light .input-label {
+.theme-light .input-row .input-label, .theme-light .readonly-field .input-label {
   color: #223 !important;
 }
-.theme-light .input-unit {
+.theme-light .input-row .input-unit, .theme-light .readonly-field .input-unit {
   color: #888 !important;
 }
 .theme-light .input-row input,
@@ -320,10 +324,10 @@ h1 {
 .theme-dark .input-row:hover, .theme-dark .input-row:focus-within {
   background: #292e42 !important;
 }
-.theme-dark .input-label {
+.theme-dark .input-row .input-label, .theme-dark .readonly-field .input-label {
   color: #c0caf5 !important;
 }
-.theme-dark .input-unit {
+.theme-dark .input-row .input-unit, .theme-dark .readonly-field .input-unit {
   color: #7dcfff !important;
 }
 .theme-dark .input-row input,
@@ -366,10 +370,10 @@ h1 {
 .theme-tokyo-night .input-row:hover, .theme-tokyo-night .input-row:focus-within {
   background: #292e42 !important;
 }
-.theme-tokyo-night .input-label {
+.theme-tokyo-night .input-row .input-label, .theme-tokyo-night .readonly-field .input-label {
   color: #c0caf5 !important;
 }
-.theme-tokyo-night .input-unit {
+.theme-tokyo-night .input-row .input-unit, .theme-tokyo-night .readonly-field .input-unit {
   color: #7dcfff !important;
 }
 .theme-tokyo-night .input-row input,
