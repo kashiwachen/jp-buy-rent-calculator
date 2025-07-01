@@ -180,28 +180,28 @@ function getSystemTheme(): Theme {
 
 function App() {
   // Buying a Home state
-  const [income, setIncome] = useState(450000);
-  const [purchasePrice, setPurchasePrice] = useState(70000000);
-  const [downPaymentPct, setDownPaymentPct] = useState(0.2);
-  const [mortgageInterest, setMortgageInterest] = useState(0.015);
-  const [mortgageLength, setMortgageLength] = useState(35);
-  const [yearsOwnership, setYearsOwnership] = useState(5);
-  const [propertyTaxPct, setPropertyTaxPct] = useState(0.0125);
-  const [maintenancePct, setMaintenancePct] = useState(0.001);
-  const [insurancePct, setInsurancePct] = useState(0.0007);
-  const [utilities, setUtilities] = useState(200);
-  const [closingCostPurchasePct, setClosingCostPurchasePct] = useState(0.01);
-  const [closingCostSalePct, setClosingCostSalePct] = useState(0.02);
-  const [appreciationPct, setAppreciationPct] = useState(0.03);
+  const [income, setIncome] = useState(0);
+  const [purchasePrice, setPurchasePrice] = useState(0);
+  const [downPaymentPct, setDownPaymentPct] = useState(0);
+  const [mortgageInterest, setMortgageInterest] = useState(0);
+  const [mortgageLength, setMortgageLength] = useState(0);
+  const [yearsOwnership, setYearsOwnership] = useState(0);
+  const [propertyTaxPct, setPropertyTaxPct] = useState(0);
+  const [maintenancePct, setMaintenancePct] = useState(0);
+  const [insurancePct, setInsurancePct] = useState(0);
+  const [utilities, setUtilities] = useState(0);
+  const [closingCostPurchasePct, setClosingCostPurchasePct] = useState(0);
+  const [closingCostSalePct, setClosingCostSalePct] = useState(0);
+  const [appreciationPct, setAppreciationPct] = useState(0);
   const [capitalGainsTax, setCapitalGainsTax] = useState('YES');
-  const [marginalTaxRate, setMarginalTaxRate] = useState(0.2);
-  const [capitalGainsExemption, setCapitalGainsExemption] = useState(500000);
-  const [initialRenovations, setInitialRenovations] = useState(200000);
+  const [marginalTaxRate, setMarginalTaxRate] = useState(0);
+  const [capitalGainsExemption, setCapitalGainsExemption] = useState(0);
+  const [initialRenovations, setInitialRenovations] = useState(0);
 
   // Renting a Home state
   const [collectingRent, setCollectingRent] = useState('NO');
   const [monthlyRent, setMonthlyRent] = useState(0);
-  const [vacancyRate, setVacancyRate] = useState(0.05);
+  const [vacancyRate, setVacancyRate] = useState(0);
   const [additionalMaintenance, setAdditionalMaintenance] = useState(0);
 
   // Theme state
