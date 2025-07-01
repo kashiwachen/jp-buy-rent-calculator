@@ -3,15 +3,13 @@ import './App.css';
 
 const THEME_KEY = 'jp-rent-buy-theme';
 
-type Theme = 'system' | 'light' | 'dark' | 'tokyo-night';
+type Theme = 'system' | 'light' | 'tokyo-night';
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
-  root.classList.remove('theme-light', 'theme-dark', 'theme-tokyo-night');
+  root.classList.remove('theme-light', 'theme-tokyo-night');
   if (theme === 'light') {
     root.classList.add('theme-light');
-  } else if (theme === 'dark') {
-    root.classList.add('theme-dark');
   } else if (theme === 'tokyo-night') {
     root.classList.add('theme-tokyo-night');
   }
@@ -20,7 +18,7 @@ function applyTheme(theme: Theme) {
 
 function getSystemTheme(): Theme {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
+    return 'tokyo-night';
   }
   return 'light';
 }
@@ -70,7 +68,7 @@ function App() {
   useEffect(() => {
     if (theme !== 'system') return;
     const handler = (e: MediaQueryListEvent) => {
-      applyTheme(e.matches ? 'dark' : 'light');
+      applyTheme(e.matches ? 'tokyo-night' : 'light');
     };
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     mq.addEventListener('change', handler);
@@ -92,7 +90,6 @@ function App() {
         >
           <option value="system">System</option>
           <option value="light">Light</option>
-          <option value="dark">Dark</option>
           <option value="tokyo-night">Tokyo Night</option>
         </select>
       </div>
