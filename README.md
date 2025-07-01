@@ -24,12 +24,6 @@ npm install
 You can run the following command from the project root to start the frontend dev server:
 
 ```
-npm run start-frontend
-```
-
-Or, from the frontend directory:
-```
-cd frontend
 npm run dev
 ```
 
