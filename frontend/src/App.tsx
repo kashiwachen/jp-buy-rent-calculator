@@ -248,7 +248,7 @@ function App() {
     <div className="container">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12, gap: 16, flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <label style={{ fontWeight: 500, marginRight: 8 }}>{translations[lang].theme}</label>
+          <label style={{ fontWeight: 500, marginRight: 8 }}>Theme:</label>
           <select
             value={theme}
             onChange={e => setTheme(e.target.value as Theme)}
@@ -260,7 +260,7 @@ function App() {
           </select>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <label style={{ fontWeight: 500, marginRight: 8 }}>{translations[lang].language}</label>
+          <label style={{ fontWeight: 500, marginRight: 8 }}>Language:</label>
           <select
             value={lang}
             onChange={e => setLang(e.target.value as Lang)}
