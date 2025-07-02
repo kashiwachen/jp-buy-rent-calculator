@@ -23,7 +23,7 @@ function isDarkMode() {
   return false;
 }
 
-function getIconColor(theme: Theme) {
+function getIconColor() {
   if (isDarkMode()) {
     return '#fff';
   }
@@ -79,10 +79,11 @@ const ThemeSelector: React.FC<Props> = ({ theme, setTheme }) => {
             zIndex: 0,
           }}
         />
-        {themeOrder.map((t, idx) => (
+        {/* Render each theme icon button */}
+        {themeOrder.map((currentTheme) => (
           <button
-            key={t}
-            onClick={() => setTheme(t)}
+            key={currentTheme}
+            onClick={() => setTheme(currentTheme)}
             style={{
               background: 'transparent',
               border: 'none',
@@ -94,17 +95,17 @@ const ThemeSelector: React.FC<Props> = ({ theme, setTheme }) => {
               cursor: 'pointer',
               outline: 'none',
               zIndex: 1,
-              color: getIconColor(t),
-              opacity: theme === t ? 1 : 0.7,
+              color: getIconColor(),
+              opacity: theme === currentTheme ? 1 : 0.7,
               transition: 'opacity 0.2s',
-              textShadow: getTextShadow(t),
+              textShadow: getTextShadow(currentTheme),
               position: 'relative',
             }}
-            aria-label={t.charAt(0).toUpperCase() + t.slice(1) + ' theme'}
+            aria-label={currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1) + ' theme'}
           >
-            {t === 'system' ? (
-              <span style={getSystemStyles(theme)}>{icons[t]}</span>
-            ) : icons[t]}
+            {currentTheme === 'system' ? (
+              <span style={getSystemStyles(currentTheme)}>{icons[currentTheme]}</span>
+            ) : icons[currentTheme]}
           </button>
         ))}
       </div>

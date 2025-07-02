@@ -94,14 +94,10 @@ function App() {
     return () => mq.removeEventListener('change', handler);
   }, [theme]);
 
-  // Calculated fields (examples)
-  const downPayment = purchasePrice * downPaymentPct;
-  const mortgageAmount = purchasePrice - downPayment;
-
   return (
     <div className="container">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12, gap: 16, flexWrap: 'wrap' }}>
-        <ThemeSelector theme={theme} setTheme={setTheme} translations={translations} lang={lang} />
+        <ThemeSelector theme={theme} setTheme={setTheme} />
         <LanguageSelector lang={lang} setLang={setLang} />
       </div>
       <h1>{translations[lang].title}</h1>
