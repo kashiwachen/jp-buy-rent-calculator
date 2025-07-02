@@ -62,7 +62,7 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
     translations, lang
   } = props;
 
-  const downPayment = purchasePrice * (downPaymentPercentage / 100);
+  const downPayment = purchasePrice * downPaymentPercentage;
   const mortgageAmount = purchasePrice - downPayment;
 
   return (
@@ -83,7 +83,7 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
         </div>
         <div className="input-row">
           <span className="input-label">{translations[lang].downPaymentPercentage}</span>
-          <input type="number" step="any" value={downPaymentPercentage} onChange={e => setDownPaymentPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={downPaymentPercentage * 100} onChange={e => setDownPaymentPercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="readonly-field">
@@ -114,17 +114,17 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
         <h3>{translations[lang].homeOwnershipCost}</h3>
         <div className="input-row">
           <span className="input-label">{translations[lang].propertyTaxPercentage}</span>
-          <input type="number" step="any" value={propertyTaxPercentage} onChange={e => setPropertyTaxPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={propertyTaxPercentage * 100} onChange={e => setPropertyTaxPercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
           <span className="input-label">{translations[lang].maintenancePercentage}</span>
-          <input type="number" step="any" value={maintenancePercentage} onChange={e => setMaintenancePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={maintenancePercentage * 100} onChange={e => setMaintenancePercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
           <span className="input-label">{translations[lang].insurancePercentage}</span>
-          <input type="number" step="any" value={insurancePercentage} onChange={e => setInsurancePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={insurancePercentage * 100} onChange={e => setInsurancePercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
@@ -135,18 +135,18 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
         <h3>{translations[lang].closingCost}</h3>
         <div className="input-row">
           <span className="input-label">{translations[lang].closingCostPurchasePercentage}</span>
-          <input type="number" step="any" value={closingCostPurchasePercentage} onChange={e => setClosingCostPurchasePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={closingCostPurchasePercentage * 100} onChange={e => setClosingCostPurchasePercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
           <span className="input-label">{translations[lang].closingCostSalePercentage}</span>
-          <input type="number" step="any" value={closingCostSalePercentage} onChange={e => setClosingCostSalePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={closingCostSalePercentage * 100} onChange={e => setClosingCostSalePercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <h3>{translations[lang].valueAssumptions}</h3>
         <div className="input-row">
           <span className="input-label">{translations[lang].appreciationPercentage}</span>
-          <input type="number" step="any" value={appreciationPercentage} onChange={e => setAppreciationPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
+          <input type="number" step="any" value={appreciationPercentage * 100} onChange={e => setAppreciationPercentage((parseFloat(e.target.value) || 0) / 100)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <h3>{translations[lang].capitalGains}</h3>
