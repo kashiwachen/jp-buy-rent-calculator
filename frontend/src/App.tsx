@@ -36,17 +36,17 @@ function App() {
   // Buying a Home state
   const [income, setIncome] = useState(0);
   const [purchasePrice, setPurchasePrice] = useState(0);
-  const [downPaymentPct, setDownPaymentPct] = useState(0);
+  const [downPaymentPercentage, setDownPaymentPercentage] = useState(0);
   const [mortgageInterest, setMortgageInterest] = useState(0);
   const [mortgageLength, setMortgageLength] = useState(0);
   const [yearsOwnership, setYearsOwnership] = useState(0);
-  const [propertyTaxPct, setPropertyTaxPct] = useState(0);
-  const [maintenancePct, setMaintenancePct] = useState(0);
-  const [insurancePct, setInsurancePct] = useState(0);
+  const [propertyTaxPercentage, setPropertyTaxPercentage] = useState(0);
+  const [maintenancePercentage, setMaintenancePercentage] = useState(0);
+  const [insurancePercentage, setInsurancePercentage] = useState(0);
   const [utilities, setUtilities] = useState(0);
-  const [closingCostPurchasePct, setClosingCostPurchasePct] = useState(0);
-  const [closingCostSalePct, setClosingCostSalePct] = useState(0);
-  const [appreciationPct, setAppreciationPct] = useState(0);
+  const [closingCostPurchasePercentage, setClosingCostPurchasePercentage] = useState(0);
+  const [closingCostSalePercentage, setClosingCostSalePercentage] = useState(0);
+  const [appreciationPercentage, setAppreciationPercentage] = useState(0);
   const [capitalGainsTax, setCapitalGainsTax] = useState('YES');
   const [marginalTaxRate, setMarginalTaxRate] = useState(0);
   const [capitalGainsExemption, setCapitalGainsExemption] = useState(0);
@@ -94,6 +94,9 @@ function App() {
     return () => mq.removeEventListener('change', handler);
   }, [theme]);
 
+  const downPayment = purchasePrice * (downPaymentPercentage / 100);
+  const mortgageAmount = purchasePrice - downPayment;
+
   return (
     <div className="container">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12, gap: 16, flexWrap: 'wrap' }}>
@@ -108,17 +111,17 @@ function App() {
         <BuyingSection
           income={income} setIncome={setIncome}
           purchasePrice={purchasePrice} setPurchasePrice={setPurchasePrice}
-          downPaymentPct={downPaymentPct} setDownPaymentPct={setDownPaymentPct}
+          downPaymentPercentage={downPaymentPercentage} setDownPaymentPercentage={setDownPaymentPercentage}
           mortgageInterest={mortgageInterest} setMortgageInterest={setMortgageInterest}
           mortgageLength={mortgageLength} setMortgageLength={setMortgageLength}
           yearsOwnership={yearsOwnership} setYearsOwnership={setYearsOwnership}
-          propertyTaxPct={propertyTaxPct} setPropertyTaxPct={setPropertyTaxPct}
-          maintenancePct={maintenancePct} setMaintenancePct={setMaintenancePct}
-          insurancePct={insurancePct} setInsurancePct={setInsurancePct}
+          propertyTaxPercentage={propertyTaxPercentage} setPropertyTaxPercentage={setPropertyTaxPercentage}
+          maintenancePercentage={maintenancePercentage} setMaintenancePercentage={setMaintenancePercentage}
+          insurancePercentage={insurancePercentage} setInsurancePercentage={setInsurancePercentage}
           utilities={utilities} setUtilities={setUtilities}
-          closingCostPurchasePct={closingCostPurchasePct} setClosingCostPurchasePct={setClosingCostPurchasePct}
-          closingCostSalePct={closingCostSalePct} setClosingCostSalePct={setClosingCostSalePct}
-          appreciationPct={appreciationPct} setAppreciationPct={setAppreciationPct}
+          closingCostPurchasePercentage={closingCostPurchasePercentage} setClosingCostPurchasePercentage={setClosingCostPurchasePercentage}
+          closingCostSalePercentage={closingCostSalePercentage} setClosingCostSalePercentage={setClosingCostSalePercentage}
+          appreciationPercentage={appreciationPercentage} setAppreciationPercentage={setAppreciationPercentage}
           capitalGainsTax={capitalGainsTax} setCapitalGainsTax={setCapitalGainsTax}
           marginalTaxRate={marginalTaxRate} setMarginalTaxRate={setMarginalTaxRate}
           capitalGainsExemption={capitalGainsExemption} setCapitalGainsExemption={setCapitalGainsExemption}

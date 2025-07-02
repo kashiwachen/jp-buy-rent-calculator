@@ -6,28 +6,28 @@ interface BuyingSectionProps {
   setIncome: (v: number) => void;
   purchasePrice: number;
   setPurchasePrice: (v: number) => void;
-  downPaymentPct: number;
-  setDownPaymentPct: (v: number) => void;
+  downPaymentPercentage: number;
+  setDownPaymentPercentage: (v: number) => void;
   mortgageInterest: number;
   setMortgageInterest: (v: number) => void;
   mortgageLength: number;
   setMortgageLength: (v: number) => void;
   yearsOwnership: number;
   setYearsOwnership: (v: number) => void;
-  propertyTaxPct: number;
-  setPropertyTaxPct: (v: number) => void;
-  maintenancePct: number;
-  setMaintenancePct: (v: number) => void;
-  insurancePct: number;
-  setInsurancePct: (v: number) => void;
+  propertyTaxPercentage: number;
+  setPropertyTaxPercentage: (v: number) => void;
+  maintenancePercentage: number;
+  setMaintenancePercentage: (v: number) => void;
+  insurancePercentage: number;
+  setInsurancePercentage: (v: number) => void;
   utilities: number;
   setUtilities: (v: number) => void;
-  closingCostPurchasePct: number;
-  setClosingCostPurchasePct: (v: number) => void;
-  closingCostSalePct: number;
-  setClosingCostSalePct: (v: number) => void;
-  appreciationPct: number;
-  setAppreciationPct: (v: number) => void;
+  closingCostPurchasePercentage: number;
+  setClosingCostPurchasePercentage: (v: number) => void;
+  closingCostSalePercentage: number;
+  setClosingCostSalePercentage: (v: number) => void;
+  appreciationPercentage: number;
+  setAppreciationPercentage: (v: number) => void;
   capitalGainsTax: string;
   setCapitalGainsTax: (v: string) => void;
   marginalTaxRate: number;
@@ -44,17 +44,17 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
   const {
     income, setIncome,
     purchasePrice, setPurchasePrice,
-    downPaymentPct, setDownPaymentPct,
+    downPaymentPercentage, setDownPaymentPercentage,
     mortgageInterest, setMortgageInterest,
     mortgageLength, setMortgageLength,
     yearsOwnership, setYearsOwnership,
-    propertyTaxPct, setPropertyTaxPct,
-    maintenancePct, setMaintenancePct,
-    insurancePct, setInsurancePct,
+    propertyTaxPercentage, setPropertyTaxPercentage,
+    maintenancePercentage, setMaintenancePercentage,
+    insurancePercentage, setInsurancePercentage,
     utilities, setUtilities,
-    closingCostPurchasePct, setClosingCostPurchasePct,
-    closingCostSalePct, setClosingCostSalePct,
-    appreciationPct, setAppreciationPct,
+    closingCostPurchasePercentage, setClosingCostPurchasePercentage,
+    closingCostSalePercentage, setClosingCostSalePercentage,
+    appreciationPercentage, setAppreciationPercentage,
     capitalGainsTax, setCapitalGainsTax,
     marginalTaxRate, setMarginalTaxRate,
     capitalGainsExemption, setCapitalGainsExemption,
@@ -62,7 +62,7 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
     translations, lang
   } = props;
 
-  const downPayment = purchasePrice * downPaymentPct;
+  const downPayment = purchasePrice * (downPaymentPercentage / 100);
   const mortgageAmount = purchasePrice - downPayment;
 
   return (
@@ -82,8 +82,8 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
           <span className="input-unit">{translations[lang].yen}</span>
         </div>
         <div className="input-row">
-          <span className="input-label">{translations[lang].downPaymentPct}</span>
-          <input type="number" step="any" value={downPaymentPct} onChange={e => setDownPaymentPct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].downPaymentPercentage}</span>
+          <input type="number" step="any" value={downPaymentPercentage} onChange={e => setDownPaymentPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="readonly-field">
@@ -113,18 +113,18 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
         </div>
         <h3>{translations[lang].homeOwnershipCost}</h3>
         <div className="input-row">
-          <span className="input-label">{translations[lang].propertyTaxPct}</span>
-          <input type="number" step="any" value={propertyTaxPct} onChange={e => setPropertyTaxPct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].propertyTaxPercentage}</span>
+          <input type="number" step="any" value={propertyTaxPercentage} onChange={e => setPropertyTaxPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
-          <span className="input-label">{translations[lang].maintenancePct}</span>
-          <input type="number" step="any" value={maintenancePct} onChange={e => setMaintenancePct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].maintenancePercentage}</span>
+          <input type="number" step="any" value={maintenancePercentage} onChange={e => setMaintenancePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
-          <span className="input-label">{translations[lang].insurancePct}</span>
-          <input type="number" step="any" value={insurancePct} onChange={e => setInsurancePct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].insurancePercentage}</span>
+          <input type="number" step="any" value={insurancePercentage} onChange={e => setInsurancePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
@@ -134,19 +134,19 @@ const BuyingSection: React.FC<BuyingSectionProps> = (props) => {
         </div>
         <h3>{translations[lang].closingCost}</h3>
         <div className="input-row">
-          <span className="input-label">{translations[lang].closingCostPurchasePct}</span>
-          <input type="number" step="any" value={closingCostPurchasePct} onChange={e => setClosingCostPurchasePct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].closingCostPurchasePercentage}</span>
+          <input type="number" step="any" value={closingCostPurchasePercentage} onChange={e => setClosingCostPurchasePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <div className="input-row">
-          <span className="input-label">{translations[lang].closingCostSalePct}</span>
-          <input type="number" step="any" value={closingCostSalePct} onChange={e => setClosingCostSalePct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].closingCostSalePercentage}</span>
+          <input type="number" step="any" value={closingCostSalePercentage} onChange={e => setClosingCostSalePercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <h3>{translations[lang].valueAssumptions}</h3>
         <div className="input-row">
-          <span className="input-label">{translations[lang].appreciationPct}</span>
-          <input type="number" step="any" value={appreciationPct} onChange={e => setAppreciationPct(parseFloat(e.target.value) || 0)} className="input-value" />
+          <span className="input-label">{translations[lang].appreciationPercentage}</span>
+          <input type="number" step="any" value={appreciationPercentage} onChange={e => setAppreciationPercentage(parseFloat(e.target.value) || 0)} className="input-value" />
           <span className="input-unit">{translations[lang].percent}</span>
         </div>
         <h3>{translations[lang].capitalGains}</h3>
