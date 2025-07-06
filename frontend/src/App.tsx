@@ -94,9 +94,6 @@ function App() {
     return () => mq.removeEventListener('change', handler);
   }, [theme]);
 
-  const downPayment = purchasePrice * downPaymentPercentage;
-  const mortgageAmount = purchasePrice - downPayment;
-
   return (
     <div className="container">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12, gap: 16, flexWrap: 'wrap' }}>
